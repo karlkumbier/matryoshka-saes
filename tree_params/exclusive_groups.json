@@ -1,0 +1,15 @@
+{
+  "active_prob": 1.0,
+  "is_read_out": false,
+  "children": [
+    {
+      "active_prob": 0.3,
+      "is_read_out": true,
+      "mutually_exclusive_children": true,
+      "children": [
+        {"active_prob": 0.4, "is_read_out": true},
+        {"active_prob": 0.6, "is_read_out": true}
+      ]
+    }
+  ]
+}

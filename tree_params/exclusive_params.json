@@ -1,0 +1,9 @@
+{
+  "tree_config": "/Users/kkumbier/github/matryoshka-saes/tree_params/exclusive_groups.json",
+  "d_model": 128,
+  "feature_correlation": 0.1,
+  "noise_level": 0.02,
+  "orthogonal_features": true,
+  "feature_scale_variation": 0.1,
+  "random_seed": 123
+}

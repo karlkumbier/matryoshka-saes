@@ -1,0 +1,9 @@
+{
+  "tree_config": "/Users/kkumbier/github/matryoshka-saes/tree_params/simple_hierarchy.json",
+  "d_model": 256,
+  "feature_correlation": 0.0,
+  "noise_level": 0.0,
+  "orthogonal_features": true,
+  "feature_scale_variation": 0.05,
+  "random_seed": 42
+}

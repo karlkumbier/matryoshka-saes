@@ -5,19 +5,6 @@ import json
 import numpy as np
 
 
-def validate_tree(instance):
-    with open("tree.schema.json", "r") as f:
-        schema = json.load(f)
-
-    jsonschema.validate(instance, schema)
-
-
-with open("tree.json") as f:
-    tree_dict = json.load(f)
-
-validate_tree(tree_dict)
-
-
 class Tree:
     def __init__(self, tree_dict, start_idx=0):
         assert "active_prob" in tree_dict
