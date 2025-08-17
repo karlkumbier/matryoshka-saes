@@ -54,7 +54,15 @@ class Tree:
 
     @property
     def child_probs(self):
-        return torch.tensor([child.active_prob for child in self.children])
+        # Return normalized numpy array of child active_probs that sum to 1
+        probs = np.array([child.active_prob for child in self.children], dtype=np.float64)
+        total = probs.sum()
+        if total == 0:
+            # Avoid division by zero; fallback to uniform
+            probs = np.ones(len(probs)) / len(probs)
+        else:
+            probs = probs / total
+        return probs
 
     def sample(self, shape=None, force_inactive=False, force_active=False):
         assert not (force_inactive and force_active)
@@ -119,4 +127,4 @@ class TreeDataset(Dataset):
     def __getitem__(self, idx):
         true_acts = self.tree.sample(self.batch_size)
         x = true_acts @ self.true_feats
-        return x
+        return x, true_acts

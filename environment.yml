@@ -1,0 +1,17 @@
+name: mech_int
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy=1.25
+  - scipy=1.11
+  - pandas=1.5
+  - matplotlib=3.7
+  - seaborn=0.12
+  - plotnine=0.12
+  - pytorch=2.2.2
+  - ipykernel
+  - jupyterlab
+  - einops
+  - pip
