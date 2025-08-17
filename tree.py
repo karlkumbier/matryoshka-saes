@@ -118,7 +118,5 @@ class TreeDataset(Dataset):
 
     def __getitem__(self, idx):
         true_acts = self.tree.sample(self.batch_size)
-        # random_scale = 1+torch.randn_like(true_acts, device=self.true_feats.device) * 0.05
-        # true_acts = true_acts * random_scale
         x = true_acts @ self.true_feats
         return x

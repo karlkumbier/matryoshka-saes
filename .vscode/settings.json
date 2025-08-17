@@ -1,0 +1,8 @@
+{
+    "python.defaultInterpreterPath": "/usr/local/Caskroom/miniconda/base/envs/mech_int/bin/python3",
+    "python.terminal.activateEnvironment": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.condaPath": "conda",
+    "python.venvPath": "/usr/local/Caskroom/miniconda/base/envs",
+    "python.envFile": "${workspaceFolder}/.env"
+}

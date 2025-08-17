@@ -7,7 +7,7 @@ from typing import Dict, List, Optional, Tuple, Union
 from torch.utils.data import Dataset
 import os
 
-from toy_model import Tree, TreeDataset
+from tree import Tree, TreeDataset
 
 
 class HierarchicalDataGenerator:
@@ -88,7 +88,7 @@ class HierarchicalDataGenerator:
         
         return true_feats.T
         
-    def get_ground_truth_l0(self, n_samples: int = 10000) -> float:
+    def get_expected_l0(self, n_samples: int = 10000) -> float:
         """Calculate the expected L0 sparsity of the ground truth features."""
         sample = self.tree.sample(n_samples)
         if isinstance(sample, list):
@@ -219,7 +219,6 @@ if __name__ == "__main__":
     
     generator = HierarchicalDataGenerator(**config)
     print(f"Generator created with {generator.n_features} features")
-    print(f"Ground truth L0: {generator.get_ground_truth_l0():.4f}")
     
     # Generate data using TreeDataset
     dataset = generator.create_dataset(batch_size=args.n_samples, num_batches=1)
@@ -232,4 +231,4 @@ if __name__ == "__main__":
     
     print(f"Generated data shape: {data.shape}")
     print(f"Activations shape: {activations.shape}")
-    print(f"Actual L0 in batch: {(activations > 0).float().mean():.4f}")
+    print(f"Expected L0 in batch: {(activations > 0).float().mean():.4f}")
